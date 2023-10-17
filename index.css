@@ -103,18 +103,52 @@ main  {
     font-family: 'Indie Flower', cursive;
 }
 
-.container-boton {
-    display: inline-block;
-    padding: 5px 10px; /* Tamaño del botón */
-    background-color: #91a6ab; /* Color de fondo del botón */
-    color: #fff; /* Color del texto del botón */
-    border: none; /* Quita el borde del botón */
-    border-radius: 10px; /* Borde redondeado */
-    font-size: 20px; /* Tamaño del texto */
-    cursor: pointer; /* Cambia el cursor al pasar el mouse */
-    margin-top: 5%;
+
+/* Boton */
+/*** ESTILOS BOTÓN SLIDE LEFT ***/
+.boton-home {
+  background: #91a6ab; 
+  color: black; /* color de fuente */
+  font-size: x-large;
+  font-family: 'Indie Flower', cursive;
+  text-decoration: none;
+  border: 2px solid #91a6ab; /* tamaño y color de borde */
+  padding: 16px 20px;
+  border-radius: 4px; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  margin-top: 3%;
+  width: 10%
 }
 
+.boton-home:hover {
+  color: #fff; /* color de fuente hover */
+}
+
+.boton-home::after {
+  content: "";
+  background: #96726D; /* color de fondo hover */
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  right: 100%;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.boton-home:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
 
 
 
