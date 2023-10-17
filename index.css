@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 13%;
+    background-color: #96726D;
+    position: fixed;
+    top: 0; /* Fija el navbar en la parte superior de la ventana */
+    left: 0; /* Opcional, fija el navbar en el extremo izquierdo */
+    right: 0; /* Opcional, fija el navbar en el extremo derecho */
+    z-index: 100;
+}
+
+/* NAVBAR */
+nav {
+    height: 100%;
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos hacia la derecha */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 0 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+ul li {
+    margin-right: 55px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.logo-nav  {
+    display: flex;
+    align-items: center;
+    padding-top: 1%;
+}
+
+.logo-nav img {
+    max-height: 15rem;
+    width: auto;
+}
+
+
+/* Contenido de la pagina */
+main  {
+    margin-top: 7%;
+    height: 85%;
+}
+
+.section-home {
+    height: 100%;
+    width: 100%;
+    background-image: url(./imgs/1.png);
+    background-size: cover;
+    overflow: auto;
+}
+
+.container-inicio {  /* seria su row */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.container-home  {  /*  su caja flex */
+    text-align: left;
+    margin-left: 15%;
+    margin-bottom: 10%;
+    padding: 20px;
+}
+
+/* Tamaños y fuentes del Inicio */
+.container-home h1, .container-home h3  {
+    margin: 0;
+    font-family: 'EB Garamond', serif;
+}
+
+.container-home h1 {
+    width: 55%;
+    font-size: 10rem;
+    font-family: 'Amatic SC', sans-serif;
+}
+
+.container-home h3 {
+    width: 40%;
+    font-size: 1.8rem;
+    font-family: 'Indie Flower', cursive;
+}
+
+.container-boton {
+    display: inline-block;
+    padding: 5px 10px; /* Tamaño del botón */
+    background-color: #91a6ab; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none; /* Quita el borde del botón */
+    border-radius: 10px; /* Borde redondeado */
+    font-size: 20px; /* Tamaño del texto */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    margin-top: 5%;
+}
+
+
+
+
+
+/* Seccion Sobre Nosotros */
+.section-SobreNosotros  {
+    height: 100%;
+    width: 100%; 
+}
+
