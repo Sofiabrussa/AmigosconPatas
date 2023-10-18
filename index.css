@@ -7,6 +7,10 @@ body {
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth; /* Agrega un desplazamiento suave a todo el documento */
+  }
+
 header {
     height: 13%;
     background-color: #96726D;
@@ -40,11 +44,13 @@ ul li {
 
 ul li a {
     text-decoration: none;
-    color: white;
+    color: #FEE3D8;
     font-size: 1.8rem;
     font-weight: bold;
+    transition: border-bottom 0.3s ease-in-out;
 }
 
+/* Logo pagina */
 .logo-nav  {
     display: flex;
     align-items: center;
@@ -54,6 +60,38 @@ ul li a {
 .logo-nav img {
     max-height: 15rem;
     width: auto;
+}
+
+/* Animaciones navbar */
+ul li a:hover {
+  border-bottom: 2px solid white;
+  -webkit-animation: slide-in-fwd-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-fwd-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-in-fwd-center {   /*Animacion de anista */
+  0% {
+    -webkit-transform: translateZ(-1400px);
+            transform: translateZ(-1400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-fwd-center {
+  0% {
+    -webkit-transform: translateZ(-1400px);
+            transform: translateZ(-1400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
 }
 
 
@@ -66,19 +104,19 @@ main  {
 .section-home {
     height: 100%;
     width: 100%;
-    background-image: url(./imgs/1.png);
+    background-image: url(./imgs/Diseño\ sin\ título\ \(4\).png);
     background-size: cover;
     overflow: auto;
 }
 
-.container-inicio {  /* seria su row */
+.container-inicio {  
     display: flex;
     align-items: center;
     justify-content: flex-start;
     height: 100%;
 }
 
-.container-home  {  /*  su caja flex */
+.container-home  {  
     text-align: left;
     margin-left: 15%;
     margin-bottom: 10%;
@@ -89,73 +127,277 @@ main  {
 .container-home h1, .container-home h3  {
     margin: 0;
     font-family: 'EB Garamond', serif;
+    color: #96726D;
 }
 
 .container-home h1 {
-    width: 55%;
-    font-size: 10rem;
+    width: 80%;
+    font-size: 11.5rem;
     font-family: 'Amatic SC', sans-serif;
 }
 
 .container-home h3 {
     width: 40%;
-    font-size: 1.8rem;
-    font-family: 'Indie Flower', cursive;
+    font-size: 2rem;
 }
 
 
-/* Boton */
-/*** ESTILOS BOTÓN SLIDE LEFT ***/
-.boton-home {
-  background: #91a6ab; 
-  color: black; /* color de fuente */
-  font-size: x-large;
-  font-family: 'Indie Flower', cursive;
-  text-decoration: none;
-  border: 2px solid #91a6ab; /* tamaño y color de borde */
-  padding: 16px 20px;
-  border-radius: 4px; /* redondear bordes */
+/* BOTON INICIO HOME PAGINA */
+button {
   position: relative;
-  z-index: 1;
-  overflow: hidden;
   display: inline-block;
-  margin-top: 3%;
-  width: 10%
-}
-
-.boton-home:hover {
-  color: #fff; /* color de fuente hover */
-}
-
-.boton-home::after {
-  content: "";
-  background: #96726D; /* color de fondo hover */
-  position: absolute;
-  z-index: -1;
-  padding: 16px 20px;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  margin-top: 4%;
+ }
+ 
+ button.learn-more {
+  width: 14rem;
+  height: auto;
+ }
+ 
+ button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
   display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #96726D;
+  border-radius: 1.625rem;
+ }
+ 
+ button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
   top: 0;
   bottom: 0;
-  left: -100%;
-  right: 100%;
-  -webkit-transition: all 0.35s;
-  transition: all 0.35s;
-}
-.boton-home:hover::after {
+  margin: auto;
+  background: #fff;
+ }
+ 
+ button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+ }
+ 
+ button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+ }
+ 
+ button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
   left: 0;
   right: 0;
-  top: 0;
   bottom: 0;
-  -webkit-transition: all 0.35s;
-  transition: all 0.35s;
-}
+  padding: 0.75rem 0;
+  margin: 0 0 0.5rem 2rem;
+  color: #96726D;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+ }
+ 
+ button:hover .circle {
+  width: 100%;
+ }
+ 
+ button:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+ }
+ 
+ button:hover .button-text {
+  color: #fff;
+ }
 
 
-
-
-/* Seccion Sobre Nosotros */
+/* Seccion SERVICIOS */
 .section-SobreNosotros  {
     height: 100%;
     width: 100%; 
 }
+
+.section-servicios  {
+    width: 100%;
+    height: 90%;
+   background-image: url(./imgs/Diseño\ sin\ título\ \(9\).png);
+    background-size: cover;
+    
+}
+
+/* Clase container-servicio */
+.container-servicio {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+
+.container-servicio > div {
+    width: 15%; /* Ancho de los elementos */
+    height: 60%; /* Alto de los elementos */
+    display: flex; /* Activa Flexbox para los elementos */
+    justify-content: end; /* Centra horizontalmente los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    flex-direction: column;
+    color: #FFFFFF;
+    font-family: 'EB Garamond', serif;
+    font-size: x-large;
+
+}
+
+.container-servicio.primero  {
+    background-image: url("./imgs/Diseño\ sin\ título\ \(2\).png");
+    background-size: cover;
+}
+
+.container-servicio.segundo  {
+    background-image: url("./imgs/Diseño\ sin\ título\ \(1\).png");
+    background-size: cover;
+}
+
+.container-servicio.tercero  {
+    background-image: url("./imgs/Diseño\ sin\ título.png");
+    background-size: cover;
+}
+
+/* Animacion p */
+.container-servicio p  {
+    width: 80%;
+    font-family: 'Indie Flower', cursive;
+    display: none; /* Oculta el párrafo inicialmente */
+}
+
+
+/* Imagen al pasar el mouse */
+.container-servicio.primero:hover  {
+    background-image: url(./imgs/Diseño\ sin\ título\ \(7\).png);
+}
+
+.container-servicio.segundo:hover  {
+    background-image: url(./imgs/Diseño\ sin\ título\ \(6\).png);
+}
+
+.container-servicio.tercero:hover  {
+    background-image: url(./imgs/Diseño\ sin\ título\ \(8\).png);
+}
+
+/* Animaciones de texto al pasar el mouse */
+.container-servicio.primero:hover p {
+    display: block; 
+    -webkit-animation: slide-top 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-top 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; 
+}
+
+.container-servicio.segundo:hover p {
+    display: block; 
+    -webkit-animation: slide-top 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-top 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.container-servicio.tercero:hover p {
+    display: block; 
+    -webkit-animation: slide-top 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-top 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.container-servicio:hover.primero h1 {
+    -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.container-servicio:hover.segundo h1 {
+    -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.container-servicio:hover.tercero h1 {
+    -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+  /* Animacion slide top */
+@-webkit-keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-100px);
+              transform: translateY(-100px);
+    }}
+
+@keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-100px);
+              transform: translateY(-100px);
+    }}
+
+
+
+/*  Section Sobre Nosotros */
+.section-sobreNosotros  {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    background-size: cover;
+}
+
+.container-nosotros  {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-nosotros > div {
+    width: 50%; /* Ancho de los elementos */
+    height: 50%; /* Alto de los elementos */
+    display: flex; /* Activa Flexbox para los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    flex-direction: column;
+    color: #91A6AB;
+    font-size: xx-large;
+}
+
+
+
+
 
